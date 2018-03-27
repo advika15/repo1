@@ -25,10 +25,5 @@ pipeline {
         bat 'echo "Deploy"'
       }
     }
-    stage('End') {
-      steps {
-        bat 'echo "End"'
-      }
-    }
   }
 }
