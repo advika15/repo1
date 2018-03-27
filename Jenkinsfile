@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('UITest') {
           steps {
-            bat 'echoUITest ""'
+            bat 'echo  "UITest"'
           }
         }
         stage('Unit Testing') {
