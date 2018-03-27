@@ -1,19 +1,33 @@
 pipeline {
   agent any
   stages {
-    stage('compile') {
+    stage('Compile') {
       steps {
-        sh 'echo "This is compile"'
+        bat 'echo "Deploy"'
       }
     }
     stage('UITest') {
-      steps {
-        sh 'echo "UITest"'
+      parallel {
+        stage('UITest') {
+          steps {
+            bat 'echoUITest ""'
+          }
+        }
+        stage('Unit Testing') {
+          steps {
+            bat 'echo "1" '
+          }
+        }
       }
     }
     stage('Deploy') {
       steps {
         bat 'echo "Deploy"'
+      }
+    }
+    stage('End') {
+      steps {
+        bat 'echo "End"'
       }
     }
   }
